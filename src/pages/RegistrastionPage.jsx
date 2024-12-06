@@ -7,17 +7,21 @@ import { register } from "../redux/authSlice";
 
 const RegistrastionPage = () => {
   const dispatch = useDispatch();
-  const { loading, error } = useSelector((state) => state.auth);
+  const { success, loading, error } = useSelector((state) => state.auth);
 
   const handleRegister = ({ firstName, lastName, email, password }) => {
-    dispatch(register({ firstName, lastName, email, password }));
-    setToast({
+    try {
+      dispatch(register({ firstName, lastName, email, password }));
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    if (success) setToast({
       show: true,
       message: "registrasi berhasil silahkan login",
-      type: "success"
+      type : "success"
     })
-    
-  };
+  }, [success]);
   const [toast, setToast] = useState({ show: false, message: "", type: "" });
 
   useEffect(() => {
@@ -25,7 +29,7 @@ const RegistrastionPage = () => {
       setToast({
         show: true,
         message: error,
-        type: "error"
+        type: "error",
       });
     }
     const timer = setTimeout(() => {
@@ -66,12 +70,12 @@ const RegistrastionPage = () => {
         </div>
       </div>
       {toast.show && (
-          <AuthToast
-            message={toast.message}
-            setToast={() => setToast({ show: false })}
-            type={toast.type}
-          />
-        )}
+        <AuthToast
+          message={toast.message}
+          setToast={() => setToast({ show: false })}
+          type={toast.type}
+        />
+      )}
       <div className="w-full ">
         <img
           src="/assets/img/IllustrasiLogin.png"

@@ -66,13 +66,16 @@ const authSlice = createSlice({
       .addCase(register.pending, (state) => {
         state.loading = true;
         state.error = null;
+        state.success = false;
       })
       .addCase(register.fulfilled, (state) => {
         state.loading = false;
+        state.success = true;
       })
       .addCase(register.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
+        state.success = false;
       });
   },
 });
