@@ -61,7 +61,12 @@ const Summary = () => {
             : errorBalance
             ? "Error"
             : showBalance
-            ? `Rp ${balance || "0"}`
+            ? `${new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                  }).format(balance)}`
             : "Rp •••••••"}
         </p>
         <div
