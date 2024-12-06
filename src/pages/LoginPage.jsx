@@ -74,7 +74,7 @@ const LoginPage = () => {
       </div>
       <div className="w-full">
         <img
-          src="/src/assets/img/IllustrasiLogin.png"
+          src="/assets/img/IllustrasiLogin.png"
           className="w-full h-full object-cover"
         />
       </div>
