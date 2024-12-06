@@ -8,7 +8,7 @@ import PrivateRoute from "./components/Common/PrivateRoute";
 import RegistrationPage from "./pages/RegistrastionPage";
 import PaymentPage from "./pages/PaymentPage";
 import TopUpPage from "./pages/TopUpPage";
-import HomePage from "./pages/Homepage";
+import HomePage from "./pages/Homepage.jsx";
 import TransactionHistoryPage from "./pages/TransactionHistoryPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
