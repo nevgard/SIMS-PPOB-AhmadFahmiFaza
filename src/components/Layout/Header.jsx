@@ -9,7 +9,7 @@ const Header = () => {
     <header className="bg-white border-b flex py-4 justify-between items-center px-32">
       <NavLink to={"/"} className="flex items-center space-x-2">
         <img
-          src="/src/assets/img/Logo.png"
+          src="/assets/img/Logo.png"
           alt="LOGO SIMS PPOB"
           className="w-6"
         />

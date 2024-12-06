@@ -21,7 +21,7 @@ const Modal = ({
         {/* Modal Title */}
         {type == "info" ? (
           <img
-            src="/src/assets/img/Logo.png"
+            src="/assets/img/Logo.png"
             alt="LOGO SIMS PPOB"
             className="w-14"
           />

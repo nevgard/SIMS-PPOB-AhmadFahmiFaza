@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProfile } from "../../redux/profileSlice";
 import { getBalance } from "../../redux/transactionSlice";
 import { useEffect, useState } from "react";
-import ProfilePlaceholder from "/src/assets/img/ProfilePhoto.png";
-import BalanceBackground from "/src/assets/img/BackgroundSaldo.png";
 
 const Summary = () => {
   const dispatch = useDispatch();
@@ -16,7 +14,7 @@ const Summary = () => {
     (state) => state.transactions
   );
   const handleImageError = (e) => {
-    e.target.src = ProfilePlaceholder; 
+    e.target.src = "/assets/img/ProfilePhoto.png"; 
   };
   console.log(balance, "balance oek")
 
@@ -31,7 +29,7 @@ const Summary = () => {
       <div className="w-1/2">
         <div className="rounded-full border-2 border-neutral-500 w-fit">
           <img
-            src={profile?.profile_image || ProfilePlaceholder}
+            src={profile?.profile_image}
             alt="Profile"
             onError={handleImageError}
             className="w-16 h-16 object-cover rounded-full"
@@ -53,9 +51,9 @@ const Summary = () => {
 
       {/* Balance Section */}
       <div
-        className="w-1/2 bg-cover px-4 py-8 rounded-2xl flex flex-col justify-between text-white"
-        style={{ backgroundImage: `url(${BalanceBackground})` }}
-      >
+  className="w-1/2 bg-cover px-4 py-8 rounded-2xl flex flex-col justify-between text-white"
+  style={{ backgroundImage: `url("/assets/img/BackgroundSaldo.png")` }}
+>
         <p className="text-xs font-medium">Saldo Anda</p>
         <p className="text-3xl font-semibold">
           {loadingBalance

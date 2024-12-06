@@ -41,7 +41,7 @@ const LoginPage = () => {
       <div className="w-full items-center justify-center flex flex-col">
         {/* Logo */}
         <div className="flex w-full items-center justify-center space-x-2">
-          <img src="/src/assets/img/Logo.png" className alt="LOGO SIMS PPOB" />
+          <img src="/assets/img/Logo.png" className alt="LOGO SIMS PPOB" />
           <h2 className="text-2xl font-semibold">SIMS PPOB</h2>
         </div>
 
